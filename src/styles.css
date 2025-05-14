@@ -1,0 +1,38 @@
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-board {
+  margin-right: 20px;
+}
+
+/* 한 줄(row) 끝나면 줄 바꿈 */
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* 각 칸 스타일 */
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  /* 기본 사이즈 */
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 50px;
+  height: 50px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 50px;
+  cursor: pointer;
+}
+
+/* 승리 메시지나 다음 플레이어 텍스트 */
+.status {
+  margin-bottom: 10px;
+}
