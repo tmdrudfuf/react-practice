@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Sounds</title>
+</head>
+<body>
+  <!-- 결과 보여줄 요소에 id 추가 -->
+  <h1 id="result">?</h1>
+
+  <input id="name" type="text" placeholder="dog, cat, bird…" />
+  <button onclick="getSound()">request API</button>
+
+  <script>
+    function getSound() {
+      const name = document.getElementById("name").value.trim();
+
+      fetch(`http://localhost:4000/sound/${name}`)
+        // respone → response
+        .then(response => {
+          if (!response.ok) throw new Error("Unknown animal");
+          return response.json();
+        })
+        .then(data => {
+          console.log(data);
+          // data.sound를 result h1에 표시
+          document.getElementById("result").textContent = data.sound;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("result").textContent = err.message;
+        });
+    }
+  </script>
+</body>
+</html>
