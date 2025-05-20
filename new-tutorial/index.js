@@ -32,6 +32,17 @@ app.get('/user/:id', (req, res) => {
 
   res.json({'id':q.id })
 })
+//make the routing as query for 
+app.get('/user/:id', (req, res) => {
+  const q = req.query
+  console.log(q.q)
+  console.log(q.name)
+  console.log(q.age)
+
+
+  res.json({'id':q.id })
+})
+
 
 
 app.listen(port, () => {
