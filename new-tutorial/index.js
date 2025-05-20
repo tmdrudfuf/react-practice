@@ -26,12 +26,12 @@ app.get('/cat',(req,res)=>{
   res.send('Meow!')
 }) 
 //make the routing as parameter for userID
-app.get('/user/:id', (req, res) => {
-  const q = req.params
-  console.log(q)
+// app.get('/user/:id', (req, res) => {
+//   const q = req.params
+//   console.log(q)
 
-  res.json({'id':q.id })
-})
+//   res.json({'id':q.id })
+// })
 //make the routing as query for 
 app.get('/user/:id', (req, res) => {
   const q = req.query
