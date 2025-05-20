@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
   res.send('Hello World!')
 })
 app.get('/dog',(req,res)=>{
-  res.send('bark!')
+  res.send('<h1>bark!</h1>')
 })
 app.get('/cat',(req,res)=>{
   res.send('Meow!')
