@@ -16,6 +16,16 @@ app.get('/', (req, res) => {
     */
   res.send('Hello World! this is ky from korea')
 })
+app.get('/',(req,res)=>{
+  res.send('Hello World!')
+})
+app.get('/dog',(req,res)=>{
+  res.send('bark!')
+})
+app.get('/cat',(req,res)=>{
+  res.send('Meow!')
+})
+
 
 app.listen(port, () => {
   //listen: open the server for the page
